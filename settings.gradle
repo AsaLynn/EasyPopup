@@ -1,2 +1,2 @@
-include ':app', ':lib', ':lib-kt'
+include ':app', ':easy-popup', ':lib-kt'
 

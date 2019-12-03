@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.zyyoona7.easypopup.basic.BasicActivity">
+    tools:context="com.zxn.easypopup.basic.BasicActivity">
 
-    <com.zyyoona7.easypopup.views.TitleBar
+    <com.zxn.easypopup.views.TitleBar
         android:id="@+id/tb_basic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.zyyoona7.easypopup.views.TitleBar>
+    </com.zxn.easypopup.views.TitleBar>
 
     <Button
         android:layout_width="wrap_content"

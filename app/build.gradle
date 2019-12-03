@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android'
 android {
     compileSdkVersion compile_sdk_version
     buildToolsVersion build_tools_version
@@ -22,14 +22,14 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':lib')
+    api project(':easy-popup')
 
     api "com.android.support:appcompat-v7:$support_version"
     api "com.android.support:recyclerview-v7:$support_version"
     api 'com.android.support.constraint:constraint-layout:1.1.0'
     api 'com.blankj:utilcode:1.13.10'
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.36'
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()

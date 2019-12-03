@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:background="#EEE8CD"
     android:orientation="vertical"
-    tools:context="com.zyyoona7.easypopup.easypop.EasyPopActivity">
+    tools:context="com.zxn.easypopup.easypop.EasyPopActivity">
 
-    <com.zyyoona7.easypopup.views.TitleBar
+    <com.zxn.easypopup.views.TitleBar
         android:id="@+id/tb_easy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.zyyoona7.easypopup.views.TitleBar>
+    </com.zxn.easypopup.views.TitleBar>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -43,6 +43,14 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
                 android:text="位于按钮之上水平居中弹出"
+                android:textSize="14sp"/>
+            <Button
+                android:id="@+id/btn_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="位于按钮之底部平居中弹出"
                 android:textSize="14sp"/>
 
             <Button

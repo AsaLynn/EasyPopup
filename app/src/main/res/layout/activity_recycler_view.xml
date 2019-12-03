@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.zyyoona7.easypopup.easypop.RecyclerViewActivity">
+    tools:context="com.zxn.easypopup.easypop.RecyclerViewActivity">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
