@@ -1,8 +1,15 @@
-apply plugin: 'com.android.application'
-//apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+//    id 'org.jetbrains.dokka'
+    id 'kotlin-android-extensions'
+//    id 'com.github.dcendents.android-maven'
+//    id 'com.jfrog.bintray'
+    id 'kotlin-kapt'
+}
+
 android {
     compileSdkVersion compile_sdk_version
-//    buildToolsVersion build_tools_version
 
     defaultConfig {
         applicationId "com.zyyoona7.easypopup"
@@ -23,18 +30,11 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':easy-popup')
-
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-
-
-
-//    api "com.android.support:appcompat-v7:$support_version"
-//    api "com.android.support:recyclerview-v7:$support_version"
-//    api 'com.android.support.constraint:constraint-layout:1.1.0'
-    implementation 'com.blankj:utilcode:1.13.10'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.36'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.3'
+    implementation 'com.blankj:utilcode:1.24.4'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     //api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
