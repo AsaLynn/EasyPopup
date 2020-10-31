@@ -21,7 +21,7 @@
 Step 2. Add the dependency
 ```gradle
 dependencies {
-    implementation 'com.zxn.popup:easy-popup:1.0'
+    implementation 'com.zxn.popup:easy-popup:1.0.7'
 }
 ```
 最新的[VERSION_CODE](https://github.com/zyyoona7/EasyPopup/releases)

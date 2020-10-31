@@ -194,7 +194,7 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
         mAbovePop.findViewById<View>(R.id.tv_copy).setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
                 Log.i(TAG, "onClick: 复制")
-                Toast.makeText(this@EasyPopActivity, "fuzhi", Toast.LENGTH_SHORT)
+                Toast.makeText(this@EasyPopActivity, "fuzhi", Toast.LENGTH_SHORT).show()
                 mAbovePop.dismiss()
             }
         })
