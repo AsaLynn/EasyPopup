@@ -14,7 +14,7 @@ android {
         minSdkVersion min_sdk_version
         targetSdkVersion target_sdk_version
         versionCode 5
-        versionName "1.0.6"
+        versionName "1.0.7"
 
     }
     buildTypes {
@@ -36,7 +36,7 @@ def siteUrl = 'https://github.com/zhang721688/EasyPopup'
 def gitUrl = 'https://github.com/zhang721688/EasyPopup.git'
 def libName = "easy-popup"
 group = "com.zxn.popup"
-version = "1.0.6"
+version = "1.0.7"
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'

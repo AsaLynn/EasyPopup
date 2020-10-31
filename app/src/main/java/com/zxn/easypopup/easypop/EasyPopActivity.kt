@@ -10,6 +10,7 @@ import android.view.View.OnTouchListener
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.PopupWindow
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
 import com.blankj.utilcode.util.KeyboardUtils
 import com.blankj.utilcode.util.LogUtils
@@ -41,7 +42,7 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
     private var mWeiboPop: EasyPopup? = null
     private var mQQPop: EasyPopup? = null
     private lateinit var mCirclePop: EasyPopup
-    private var mAbovePop: EasyPopup? = null
+    private lateinit var mAbovePop: EasyPopup
     private var mBottomPop: EasyPopup? = null
     private var mBgDimPop: EasyPopup? = null
     private var mAnyBgDimPop: EasyPopup? = null
@@ -190,6 +191,13 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
                 .setFocusAndOutsideEnable(true)
                 .setOnDismissListener { Log.e(TAG, "onDismiss: mAbovePop") }
                 .apply()
+        mAbovePop.findViewById<View>(R.id.tv_copy).setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View) {
+                Log.i(TAG, "onClick: 复制")
+                Toast.makeText(this@EasyPopActivity, "fuzhi", Toast.LENGTH_SHORT)
+                mAbovePop.dismiss()
+            }
+        })
     }
 
     private fun initBottomPop() {

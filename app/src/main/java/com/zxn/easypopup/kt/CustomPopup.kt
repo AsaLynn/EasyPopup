@@ -8,10 +8,10 @@ import com.zxn.popup.BasePopup
  */
 class CustomPopup() : BasePopup<CustomPopup>() {
     override fun initViews(view: View?, popup: CustomPopup?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun initAttributes() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 }
