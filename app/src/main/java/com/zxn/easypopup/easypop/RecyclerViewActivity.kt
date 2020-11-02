@@ -13,6 +13,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemChildClickListener
 import com.chad.library.adapter.base.listener.OnItemLongClickListener
 import com.zxn.easypopup.R
+import com.zxn.popup.BasePopup
 import com.zxn.popup.BasePopup.OnRealWHAlreadyListener
 import com.zxn.popup.EasyPopup
 import com.zxn.popup.XGravity
@@ -56,12 +57,14 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         //回调在所有Show方法之后updateLocation方法之前执行
         //只有调用showAtAnchorView方法才会执行updateLocation方法
-        mRvPop.setOnRealWHAlreadyListener(OnRealWHAlreadyListener { basePopup, popWidth, popHeight, anchorW, anchorH ->
-            Log.i(TAG, "onMeasureFinished: width=$popWidth")
-            val offsetX = ((resources.displayMetrics.widthPixels - popWidth) / 2
-                    - resources.getDimensionPixelSize(R.dimen.dp_30))
-            //重新设置偏移量
-            mRvPop.setOffsetX(-offsetX)
+        mRvPop.setOnRealWHAlreadyListener(object :OnRealWHAlreadyListener{
+            override fun onRealWHAlready(basePopup: BasePopup<*>?, popWidth: Int, popHeight: Int, anchorW: Int, anchorH: Int) {
+                Log.i(TAG, "onMeasureFinished: width=$popWidth")
+                val offsetX = ((resources.displayMetrics.widthPixels - popWidth) / 2
+                        - resources.getDimensionPixelSize(R.dimen.dp_30))
+                //重新设置偏移量
+                mRvPop.setOffsetX(-offsetX)
+            }
         })
     }
 

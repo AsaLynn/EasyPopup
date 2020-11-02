@@ -127,10 +127,15 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
                 .setContext(this)
                 .setContentView(R.layout.layout_right_pop)
                 .setAnimationStyle(R.style.RightTop2PopAnim)
-                .setOnViewListener { view, basePopup ->
-                    val arrowView = view.findViewById<View>(R.id.v_arrow)
-                    arrowView.background = TriangleDrawable(TriangleDrawable.TOP, Color.parseColor("#88FF88"))
-                }
+                .setOnViewListener(object : EasyPopup.OnViewListener{
+                    override fun initViews(view: View?, popup: EasyPopup?) {
+                        val arrowView = view?.findViewById<View>(R.id.v_arrow)
+                        if (arrowView != null) {
+                            arrowView.background = TriangleDrawable(TriangleDrawable.TOP, Color.parseColor("#88FF88"))
+                        }
+                    }
+
+                })
                 .setFocusAndOutsideEnable(true) //                .setBackgroundDimEnable(true)
                 //                .setDimValue(0.5f)
                 //                .setDimColor(Color.RED)
@@ -148,10 +153,12 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
         mWeiboPop = EasyPopup.create()
                 .setContentView(this, R.layout.layout_center_pop)
                 .setAnimationStyle(R.style.TopPopAnim)
-                .setOnViewListener { view, basePopup ->
-                    val arrowView = view.findViewById<View>(R.id.v_arrow_weibo)
-                    arrowView.background = TriangleDrawable(TriangleDrawable.TOP, Color.WHITE)
-                }
+                .setOnViewListener(object : EasyPopup.OnViewListener{
+                    override fun initViews(view: View?, popup: EasyPopup?) {
+                        val arrowView = view!!.findViewById<View>(R.id.v_arrow_weibo)
+                        arrowView.background = TriangleDrawable(TriangleDrawable.TOP, Color.WHITE)
+                    }
+                })
                 .setFocusAndOutsideEnable(true)
                 .apply()
     }
@@ -166,16 +173,19 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
                 .setContentView(this, R.layout.layout_circle_comment)
                 .setAnimationStyle(R.style.RightPopAnim)
                 .setFocusAndOutsideEnable(true)
-                .setOnViewListener { view, popup ->
-                    view.findViewById<View>(R.id.tv_zan).setOnClickListener {
-                        ToastUtils.showShort("赞")
-                        popup.dismiss()
+                .setOnViewListener(object : EasyPopup.OnViewListener{
+                    override fun initViews(view: View?, popup: EasyPopup?) {
+                        view!!.findViewById<View>(R.id.tv_zan).setOnClickListener {
+                            ToastUtils.showShort("赞")
+                            popup!!.dismiss()
+                        }
+                        view.findViewById<View>(R.id.tv_comment).setOnClickListener {
+                            ToastUtils.showShort("评论")
+                            popup!!.dismiss()
+                        }
                     }
-                    view.findViewById<View>(R.id.tv_comment).setOnClickListener {
-                        ToastUtils.showShort("评论")
-                        popup.dismiss()
-                    }
-                }
+
+                })
                 .apply()
         mCirclePop.setOnDismissListener(PopupWindow.OnDismissListener { Log.e(TAG, "onDismiss: mCirclePop") })
     }
@@ -191,7 +201,7 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
                 .setFocusAndOutsideEnable(true)
                 .setOnDismissListener { Log.e(TAG, "onDismiss: mAbovePop") }
                 .apply()
-        mAbovePop.findViewById<View>(R.id.tv_copy).setOnClickListener(object : View.OnClickListener {
+        mAbovePop.findViewById<View>(R.id.tv_copy)!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
                 Log.i(TAG, "onClick: 复制")
                 Toast.makeText(this@EasyPopActivity, "fuzhi", Toast.LENGTH_SHORT).show()
@@ -208,7 +218,7 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun showAbovePop(view: View) {
-        mAbovePop!!.showAtAnchorView(view, YGravity.ABOVE, XGravity.CENTER)
+        mAbovePop.showAtAnchorView(view, YGravity.ABOVE, XGravity.CENTER)
     }
 
     private fun showBottomPop(view: View) {
@@ -216,7 +226,7 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun showRightPop(view: View) {
-        mAbovePop!!.showAtAnchorView(view, YGravity.CENTER, XGravity.RIGHT)
+        mAbovePop.showAtAnchorView(view, YGravity.CENTER, XGravity.RIGHT)
     }
 
     private fun initBgDimPop() {

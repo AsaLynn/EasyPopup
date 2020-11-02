@@ -6,12 +6,13 @@ import com.zxn.popup.BasePopup
 /**
  * Created by zyyoona7 on 2017/9/19.
  */
-class CustomPopup() : BasePopup<CustomPopup>() {
-    override fun initViews(view: View?, popup: CustomPopup?) {
+class CustomPopup : BasePopup<CustomPopup>() {
+
+    override fun initAttributes() {
 
     }
 
-    override fun initAttributes() {
+    override fun initViews(view: View?, popup: CustomPopup) {
 
     }
 }

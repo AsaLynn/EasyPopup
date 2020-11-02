@@ -22,8 +22,8 @@ class GiftPopup : BasePopup<GiftPopup>() {
         setFocusAndOutsideEnable(true)
     }
 
-    protected override fun initViews(view: View, basePopup: GiftPopup) {
-        mRecyclerView = findViewById(R.id.rv_gift)
+    override fun initViews(view: View?, basePopup: GiftPopup) {
+        mRecyclerView = findViewById(R.id.rv_gift)!!
         mRecyclerView.layoutManager = GridLayoutManager(mRecyclerView.getContext(), 4, GridLayoutManager.VERTICAL, false)
         val list = createList()
         val adapter = GiftAdapter()

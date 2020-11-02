@@ -13,16 +13,6 @@ class EverywherePopup private constructor(context: Context) : BasePopup<Everywhe
                 .setAnimationStyle(R.style.LeftTopPopAnim)
     }
 
-    protected override fun initViews(view: View, basePopup: EverywherePopup) {
-
-//        setOnRealWHAlreadyListener(new OnRealWHAlreadyListener() {
-//            @Override
-//            public void onRealWHAlready(BasePopup basePopup, int popWidth, int popHeight, int anchorW, int anchorH) {
-//
-//            }
-//        });
-    }
-
     /**
      * 自适应触摸点 弹出
      * @param parent
@@ -38,18 +28,18 @@ class EverywherePopup private constructor(context: Context) : BasePopup<Everywhe
         var offsetY = touchY
         if (touchX < width && screenHeight - touchY < height) {
             //左下弹出动画
-            popupWindow.animationStyle = R.style.LeftBottomPopAnim
+            popupWindow!!.animationStyle = R.style.LeftBottomPopAnim
             offsetY = touchY - height
         } else if (touchX + width > screenWidth && touchY + height > screenHeight) {
             //右下弹出动画
-            popupWindow.animationStyle = R.style.RightBottomPopAnim
+            popupWindow!!.animationStyle = R.style.RightBottomPopAnim
             offsetX = touchX - width
             offsetY = touchY - height
         } else if (touchX + width > screenWidth) {
-            popupWindow.animationStyle = R.style.RightTopPopAnim
+            popupWindow!!.animationStyle = R.style.RightTopPopAnim
             offsetX = touchX - width
         } else {
-            popupWindow.animationStyle = R.style.LeftTopPopAnim
+            popupWindow!!.animationStyle = R.style.LeftTopPopAnim
         }
         showAtLocation(parent, Gravity.NO_GRAVITY, offsetX, offsetY)
         //        }
@@ -64,5 +54,14 @@ class EverywherePopup private constructor(context: Context) : BasePopup<Everywhe
 
     init {
         setContext(context)
+    }
+
+    override fun initViews(view: View?, popup: EverywherePopup) {
+        //        setOnRealWHAlreadyListener(new OnRealWHAlreadyListener() {
+//            @Override
+//            public void onRealWHAlready(BasePopup basePopup, int popWidth, int popHeight, int anchorW, int anchorH) {
+//
+//            }
+//        });
     }
 }

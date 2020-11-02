@@ -12,8 +12,6 @@ import com.zxn.easypopup.R
 import com.zxn.popup.BasePopup
 import java.util.*
 
-//import androidx.recyclerview.widget.LinearLayoutManager;
-//import androidx.recyclerview.widget.RecyclerView;
 /**
  * Created by zyyoona7 on 2017/8/4.
  */
@@ -29,10 +27,10 @@ class ComplexPopup protected constructor(private val mContext: Context?) : BaseP
                 .setDimValue(0.5f)
     }
 
-    override fun initViews(view: View, basePopup: ComplexPopup) {
-        mOkBtn = findViewById(R.id.btn_ok)
-        mCancelBtn = findViewById(R.id.btn_cancel)
-        mRecyclerView = findViewById(R.id.rv_complex)
+    override fun initViews(view: View?, basePopup: ComplexPopup) {
+        mOkBtn = findViewById(R.id.btn_ok)!!
+        mCancelBtn = findViewById(R.id.btn_cancel)!!
+        mRecyclerView = findViewById(R.id.rv_complex)!!
         mComplexAdapter = ComplexAdapter()
         mRecyclerView.layoutManager = LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
         mRecyclerView.adapter = mComplexAdapter
@@ -42,8 +40,8 @@ class ComplexPopup protected constructor(private val mContext: Context?) : BaseP
         }
         //mComplexAdapter!!.setNewData(list)
         mComplexAdapter.setList(list)
-        mOkBtn.setOnClickListener(View.OnClickListener { dismiss() })
-        mCancelBtn.setOnClickListener(View.OnClickListener { dismiss() })
+        mOkBtn.setOnClickListener({ dismiss() })
+        mCancelBtn.setOnClickListener({ dismiss() })
         mComplexAdapter.setOnItemChildClickListener(object : OnItemChildClickListener {
 
             override fun onItemChildClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
@@ -68,4 +66,5 @@ class ComplexPopup protected constructor(private val mContext: Context?) : BaseP
     init {
         setContext(mContext)
     }
+
 }

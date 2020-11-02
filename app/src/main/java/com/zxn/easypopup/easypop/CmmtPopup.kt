@@ -34,13 +34,7 @@ class CmmtPopup(context: Context?) : BasePopup<CmmtPopup>() {
                 .setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
     }
 
-    override fun initViews(view: View, basePopup: CmmtPopup) {
-        mCancelTv = findViewById(R.id.tv_cancel)
-        mOkTv = findViewById(R.id.tv_ok)
-        mEditText = findViewById(R.id.et_cmmt)
-        mCancelTv!!.setOnClickListener(mCancelListener)
-        mOkTv!!.setOnClickListener(mOkListener)
-    }
+
 
     fun setOnCancelClickListener(listener: View.OnClickListener?): CmmtPopup {
         mCancelListener = listener
@@ -75,4 +69,13 @@ class CmmtPopup(context: Context?) : BasePopup<CmmtPopup>() {
     init {
         setContext(context)
     }
+
+    override fun initViews(view: View?, popup: CmmtPopup) {
+        mCancelTv = findViewById(R.id.tv_cancel)
+        mOkTv = findViewById(R.id.tv_ok)
+        mEditText = findViewById(R.id.et_cmmt)
+        mCancelTv!!.setOnClickListener(mCancelListener)
+        mOkTv!!.setOnClickListener(mOkListener)
+    }
+
 }
