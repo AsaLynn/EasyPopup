@@ -249,6 +249,7 @@ mComplexPopup = ComplexPopup.create(this)
 
 ### TODO
 ```
+    git config --global http.sslVerify "false"
     git tag -a 1.1.3 -m '1.1.3发布'
     git push origin 1.1.3
     git tag
