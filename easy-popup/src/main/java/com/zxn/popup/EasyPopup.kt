@@ -6,7 +6,7 @@ import android.view.View
 class EasyPopup : BasePopup<EasyPopup> {
     private var mOnViewListener: OnViewListener? = null
 
-    constructor() {}
+    constructor()
     constructor(context: Context?) {
         setContext(context)
     }

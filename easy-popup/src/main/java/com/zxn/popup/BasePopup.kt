@@ -15,12 +15,6 @@ import android.widget.PopupWindow
 import androidx.annotation.*
 import androidx.core.widget.PopupWindowCompat
 
-/**
- * Created by zyyoona7 on 2017/8/3.
- *
- *
- * PopupWindow封装
- */
 abstract class BasePopup<T : BasePopup<T>> : PopupWindow.OnDismissListener {
     /**
      * 获取PopupWindow对象
