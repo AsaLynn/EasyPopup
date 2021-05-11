@@ -52,9 +52,8 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
     private var mEverywherePopup: EverywherePopup? = null
     private var mLastX = 0f
     private var mLastY = 0f
-    override fun setLayoutId(): Int {
-        return R.layout.activity_easy_pop
-    }
+
+    override fun setLayoutId(): Int = R.layout.activity_easy_pop
 
     override fun initVariables() {}
     override fun initViews() {
@@ -81,7 +80,7 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
         initGiftPop()
         initCmmtPop()
         initComplexPop()
-        mEverywherePopup = EverywherePopup.Companion.create(this)
+        mEverywherePopup = EverywherePopup.create(this)
                 .apply()
         mEverywhereTv.setOnTouchListener(OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
