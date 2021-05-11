@@ -248,8 +248,11 @@ mComplexPopup = ComplexPopup.create(this)
 - 加入了更多的方法，欢迎阅读源码。
 
 ### TODO
-
-
+```
+    git tag -a 1.1.3 -m '1.1.3发布'
+    git push origin 1.1.3
+    git tag
+```
 ### 感谢
 
 **[RelativePopupWindow](https://github.com/kakajika/RelativePopupWindow)**<br>
