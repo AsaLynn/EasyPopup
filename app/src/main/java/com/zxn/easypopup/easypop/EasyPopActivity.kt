@@ -56,6 +56,7 @@ class EasyPopActivity : BaseActivity(), View.OnClickListener {
     override fun setLayoutId(): Int = R.layout.activity_easy_pop
 
     override fun initVariables() {}
+
     override fun initViews() {
         mTitleBar = findViewById(R.id.tb_easy)
         mTitleBar.setTile("Easy Pop")
